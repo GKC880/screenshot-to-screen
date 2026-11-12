@@ -35,7 +35,7 @@ export function SiteHeader() {
   const links = [
     ["Explore", "/explore"], ["Activities", "/categories"],
     ["Destinations", "/destinations"], ["For Operators", "/operators"],
-  ] as const;
+  ];
   return (
     <header className="relative z-30 mx-auto grid w-full max-w-[1440px] grid-cols-[1fr_auto_1fr] items-center gap-4 px-5 py-4 sm:px-9 lg:px-12 lg:py-5">
       <Link to="/" aria-label="VIVERE home" className="hidden min-w-0 items-center gap-2 lg:flex">
