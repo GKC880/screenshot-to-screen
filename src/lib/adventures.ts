@@ -114,6 +114,10 @@ export const categories = [
   { name: "Nature", icon: "❧" },
 ] as const;
 
+export function getAdventure(slug: string): Adventure {
+  return adventures.find((adventure) => adventure.slug === slug) ?? adventures[0];
+}
+
 export function calculateBookingTotal(pricePerPerson: number, partySize: number): number {
   return pricePerPerson * partySize;
 }
