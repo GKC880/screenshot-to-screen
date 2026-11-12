@@ -22,7 +22,7 @@ export type Adventure = {
   pin: { left: string; top: string };
 };
 
-export const adventures: Adventure[] = [
+export const adventures: [Adventure, ...Adventure[]] = [
   {
     slug: "bir-billing-paragliding",
     title: "Paragliding in Bir Billing",
@@ -112,7 +112,7 @@ export const categories = [
   { name: "Motorsports", icon: "◉" },
   { name: "Extreme", icon: "↗" },
   { name: "Nature", icon: "❧" },
-];
+] as const;
 
 export function calculateBookingTotal(pricePerPerson: number, partySize: number): number {
   return pricePerPerson * partySize;
