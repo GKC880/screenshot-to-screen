@@ -80,7 +80,7 @@ export function AdventureCard({ adventure, saved, onToggleSaved, compact = false
 export function CategoryRail({ selected, onSelect }: { selected: string; onSelect: (category: string) => void }) {
   const categories = [
     ["All", "⊞"], ["Air", "⌁"], ["Water", "≈"], ["Land", "△"], ["Height", "♙"], ["Camping", "⌂"], ["Snow", "❄"], ["Motorsports", "◉"], ["Extreme", "↗"], ["Nature", "❧"],
-  ];
+  ] as const;
   return <div className="no-scrollbar flex gap-2 overflow-x-auto pb-2" aria-label="Adventure categories">{categories.map(([name, icon]) => <button type="button" key={name} aria-pressed={selected === name} onClick={() => onSelect(name)} className={`flex min-w-[74px] shrink-0 flex-col items-center gap-2 rounded-xl px-3 py-3 transition-colors ${selected === name ? "bg-secondary text-foreground" : "text-muted-foreground hover:bg-card"}`}><span className="font-display text-2xl leading-none">{icon}</span><span className="text-[11px] font-semibold">{name}</span></button>)}</div>;
 }
 
