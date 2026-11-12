@@ -38,10 +38,11 @@ export function SiteHeader() {
   ] as const;
   return (
     <header className="relative z-30 mx-auto grid w-full max-w-[1440px] grid-cols-[1fr_auto_1fr] items-center gap-4 px-5 py-4 sm:px-9 lg:px-12 lg:py-5">
-      <Link to="/" aria-label="VIVERE home" className="flex min-w-0 items-center gap-2">
+      <Link to="/" aria-label="VIVERE home" className="hidden min-w-0 items-center gap-2 lg:flex">
         <img src={emblem.url} alt="VIVERE mountain and sun emblem" className="h-11 w-11 shrink-0 rounded-full object-cover" />
         <span className="hidden font-display text-[15px] font-extrabold tracking-[0.12em] sm:block">VIVERE</span>
       </Link>
+      <Link to="/" aria-label="VIVERE home" className="absolute left-1/2 top-1/2 grid h-10 w-10 -translate-x-1/2 -translate-y-1/2 place-items-center lg:hidden"><img src={emblem.url} alt="VIVERE mountain and sun emblem" className="h-9 w-9 rounded-full object-cover" /></Link>
       <nav aria-label="Main navigation" className="hidden items-center gap-7 lg:flex">
         {links.map(([label, href]) => <Link key={href} to={href} className="text-[13px] font-semibold text-muted-foreground transition-colors hover:text-foreground">{label}</Link>)}
       </nav>
