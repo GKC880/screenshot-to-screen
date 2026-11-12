@@ -22,7 +22,7 @@ export type Adventure = {
   pin: { left: string; top: string };
 };
 
-export const adventures: [Adventure, ...Adventure[]] = [
+export const adventures = [
   {
     slug: "bir-billing-paragliding",
     title: "Paragliding in Bir Billing",
@@ -99,7 +99,7 @@ export const adventures: [Adventure, ...Adventure[]] = [
       "Discover Goa's underwater world on a guided introduction to scuba. Get comfortable with the equipment before meeting bright reef life beneath clear coastal water.",
     pin: { left: "43%", top: "61%" },
   },
-];
+] satisfies [Adventure, ...Adventure[]];
 
 export const categories = [
   { name: "All", icon: "⊞" },
@@ -112,7 +112,7 @@ export const categories = [
   { name: "Motorsports", icon: "◉" },
   { name: "Extreme", icon: "↗" },
   { name: "Nature", icon: "❧" },
-] as const;
+];
 
 export function getAdventure(slug: string): Adventure {
   return adventures.find((adventure) => adventure.slug === slug) ?? adventures[0];
