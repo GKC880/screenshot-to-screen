@@ -113,3 +113,7 @@ export const categories = [
   { name: "Extreme", icon: "↗" },
   { name: "Nature", icon: "❧" },
 ];
+
+export function calculateBookingTotal(pricePerPerson: number, partySize: number): number {
+  return pricePerPerson * partySize;
+}
